@@ -61,5 +61,12 @@ namespace GeneralBank.Clases
             get { return curp; }
             set { curp = value; }
         }
+
+        private Telefono[] telefonos;
+        public Telefono[] Telefono
+        {
+            get { return telefonos; }
+            set { telefonos = value; }
+        }
     }
 }
