@@ -7,6 +7,13 @@ namespace GeneralBank.Clases
 {
     class Persona
     {
+        public Persona(String n,String ap, String am, String fechaNac) {
+            this.nombre = n;
+            this.apellidoPaterno = ap;
+            this.apellidoMaterno = am;
+            this.fechaNacimiento = fechaNac;
+        }
+
         private String nombre;
         public String Nombre
         {
