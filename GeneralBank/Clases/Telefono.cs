@@ -9,7 +9,7 @@ namespace GeneralBank.Clases
     {
         public Telefono(String lada, String tel, String tipo) {
             this.lada = lada;
-            this.telefono = tel;
+            this.numero = tel;
             this.tipo = tipo;
         }
 
@@ -20,11 +20,11 @@ namespace GeneralBank.Clases
             set { lada = value; }
         }
 
-        private String telefono;
-        public String Telefono
+        private String numero;
+        public String Numero
         {
-            get { return telefono; }
-            set { telefono = value; }
+            get { return numero; }
+            set { numero = value; }
         }
 
         private String tipo;
