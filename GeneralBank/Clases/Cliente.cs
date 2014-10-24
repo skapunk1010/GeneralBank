@@ -16,7 +16,7 @@ namespace GeneralBank.Clases
         public String[] CuentasAsociadas
         {
             get { return cuentasAsociada; }
-            set { cuentasAsociada = value}
+            set { cuentasAsociada = value; }
         }
     }
 }
