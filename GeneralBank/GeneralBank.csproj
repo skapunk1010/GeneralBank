@@ -67,10 +67,91 @@
     <Compile Include="AgregarCliente.Designer.cs">
       <DependentUpon>AgregarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarCuenta.Designer.cs">
+      <DependentUpon>AgregarCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BloquearCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BloquearCuenta.Designer.cs">
+      <DependentUpon>BloquearCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\Deposito.cs" />
+    <Compile Include="Clases\Domicilio.cs" />
+    <Compile Include="Clases\Empleado.cs" />
+    <Compile Include="Clases\Movimiento.cs" />
+    <Compile Include="Clases\Persona.cs" />
+    <Compile Include="Clases\Sucursal.cs" />
+    <Compile Include="Clases\Telefono.cs" />
+    <Compile Include="Clases\Transferencia.cs" />
+    <Compile Include="ConfirmacionDeposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionDeposito.Designer.cs">
+      <DependentUpon>ConfirmacionDeposito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmarBloqueoCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmarBloqueoCuenta.Designer.cs">
+      <DependentUpon>ConfirmarBloqueoCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmacionTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionTransferencia.Designer.cs">
+      <DependentUpon>ConfirmacionTransferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HacerDeposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HacerDeposito.Designer.cs">
+      <DependentUpon>HacerDeposito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HacerTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HacerTransferencia.Designer.cs">
+      <DependentUpon>HacerTransferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgregarCliente.resx">
       <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarCuenta.resx">
+      <DependentUpon>AgregarCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BloquearCuenta.resx">
+      <DependentUpon>BloquearCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmacionDeposito.resx">
+      <DependentUpon>ConfirmacionDeposito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmacionTransferencia.resx">
+      <DependentUpon>ConfirmacionTransferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmarBloqueoCuenta.resx">
+      <DependentUpon>ConfirmarBloqueoCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HacerDeposito.resx">
+      <DependentUpon>HacerDeposito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HacerTransferencia.resx">
+      <DependentUpon>HacerTransferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
