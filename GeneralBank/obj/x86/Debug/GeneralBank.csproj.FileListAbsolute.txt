@@ -7,3 +7,5 @@ C:\Users\Erick Martínez\Documents\Visual Studio 2010\Projects\GeneralBank\Gener
 C:\Users\Erick Martínez\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Erick Martínez\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.exe
 C:\Users\Erick Martínez\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.pdb
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.exe
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.pdb

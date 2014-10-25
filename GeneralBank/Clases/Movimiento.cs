@@ -7,12 +7,13 @@ namespace GeneralBank.Clases
 {
     class Movimiento
     {
-        public Movimiento(int id, Enum tipo, String d, String f, Empleado e) {
+        public Movimiento(int id, Enum tipo, String d, String f, Empleado e, String c) {
             this.idMovimiento = id;
             this.tipo = tipo;
             this.descripcion = d;
             this.fecha = f;
             this.empleado = e;
+            this.numCuenta = c;
         }
 
         private int idMovimiento;
@@ -48,6 +49,13 @@ namespace GeneralBank.Clases
         {
             get { return empleado; }
             set { empleado = value; }
+        }
+
+        private Empleado numCuenta;
+        public Empleado NumCuenta
+        {
+            get { return numCuenta; }
+            set { numCuenta = value; }
         }
     }
 }
