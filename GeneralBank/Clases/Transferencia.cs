@@ -7,7 +7,8 @@ namespace GeneralBank.Clases
 {
     class Transferencia : Movimiento
     {
-        public Transferencia(int id, Enum tipo, String d, String f, Empleado e,float m, String destino): base(id,tipo,d,f,e) {
+        public Transferencia(int id, Enum tipo, String d, String f, Empleado e, float m, String destino, String c) : base(id, tipo, d, f, e, c)
+        {
             this.monto = m;
             this.numCuentaDestino = destino;
         }

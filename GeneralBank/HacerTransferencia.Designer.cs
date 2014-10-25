@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCuentaOrigen = new System.Windows.Forms.TextBox();
             this.txtCuentaDestino = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCantTransferir = new System.Windows.Forms.TextBox();
             this.btnValidar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -82,12 +82,12 @@
             this.txtCuentaDestino.Size = new System.Drawing.Size(184, 20);
             this.txtCuentaDestino.TabIndex = 4;
             // 
-            // textBox3
+            // txtCantTransferir
             // 
-            this.textBox3.Location = new System.Drawing.Point(196, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(199, 20);
-            this.textBox3.TabIndex = 5;
+            this.txtCantTransferir.Location = new System.Drawing.Point(196, 40);
+            this.txtCantTransferir.Name = "txtCantTransferir";
+            this.txtCantTransferir.Size = new System.Drawing.Size(199, 20);
+            this.txtCantTransferir.TabIndex = 5;
             // 
             // btnValidar
             // 
@@ -97,6 +97,7 @@
             this.btnValidar.TabIndex = 6;
             this.btnValidar.Text = "Validar";
             this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // btnAceptar
             // 
@@ -106,6 +107,7 @@
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -115,10 +117,11 @@
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtCantTransferir);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnAceptar);
@@ -127,12 +130,13 @@
             this.groupBox1.Size = new System.Drawing.Size(465, 224);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Visible = false;
             // 
             // HacerTransferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 412);
+            this.ClientSize = new System.Drawing.Size(594, 411);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.txtCuentaDestino);
@@ -158,7 +162,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCuentaOrigen;
         private System.Windows.Forms.TextBox txtCuentaDestino;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCantTransferir;
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;

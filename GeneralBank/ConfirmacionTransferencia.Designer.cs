@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtInformacion = new System.Windows.Forms.RichTextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblIdTransaccion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // txtInformacion
             // 
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(36, 33);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(379, 137);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.txtInformacion.Location = new System.Drawing.Point(36, 33);
+            this.txtInformacion.Name = "txtInformacion";
+            this.txtInformacion.ReadOnly = true;
+            this.txtInformacion.Size = new System.Drawing.Size(379, 154);
+            this.txtInformacion.TabIndex = 0;
+            this.txtInformacion.Text = "";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(340, 193);
+            this.btnAceptar.Location = new System.Drawing.Point(340, 203);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -83,12 +84,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 337);
+            this.ClientSize = new System.Drawing.Size(454, 336);
             this.Controls.Add(this.lblIdTransaccion);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtInformacion);
             this.MaximumSize = new System.Drawing.Size(470, 375);
             this.MinimumSize = new System.Drawing.Size(470, 375);
             this.Name = "ConfirmacionTransferencia";
@@ -101,7 +102,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtInformacion;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox textBox1;

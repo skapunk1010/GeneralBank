@@ -51,8 +51,8 @@ namespace GeneralBank.Clases
             set { empleado = value; }
         }
 
-        private Empleado numCuenta;
-        public Empleado NumCuenta
+        private String numCuenta;
+        public String NumCuenta
         {
             get { return numCuenta; }
             set { numCuenta = value; }

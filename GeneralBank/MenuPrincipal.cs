@@ -15,5 +15,17 @@ namespace GeneralBank
         {
             InitializeComponent();
         }
+
+        private void depósitoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HacerDeposito form = new HacerDeposito();
+            form.Show();
+        }
+
+        private void transferenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HacerTransferencia form = new HacerTransferencia();
+            form.Show();
+        }
     }
 }

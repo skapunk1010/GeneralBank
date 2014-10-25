@@ -9,3 +9,16 @@ C:\Users\Erick Martínez\Documents\Visual Studio 2010\Projects\GeneralBank\Gener
 C:\Users\Erick Martínez\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.pdb
 C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.exe
 C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.pdb
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.AgregarCliente.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.AgregarCuenta.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.BloquearCuenta.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.ConfirmacionDeposito.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.ConfirmacionTransferencia.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.ConfirmarBloqueoCuenta.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.HacerDeposito.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.HacerTransferencia.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.MenuPrincipal.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.Properties.Resources.resources
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.csproj.GenerateResource.Cache
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\bin\Debug\GeneralBank.exe
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\bin\Debug\GeneralBank.pdb
