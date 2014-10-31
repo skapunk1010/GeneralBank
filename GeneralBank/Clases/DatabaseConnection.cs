@@ -8,17 +8,11 @@ namespace GeneralBank.Clases
 {
     class DatabaseConnection
     {
-        private static MySqlConnection currentConnection;
-        private static String sql_string;
-        private static String error_message;
-        private static List<string> arrayResult;
-
-        public DatabaseConnection()
-        {
-            currentConnection = null;
-            sql_string = "";
-            arrayResult = new List<string>();
-        }
+        private const String CONNECTION_STRING = "server=localhost; database=generalbank; Uid=root; pwd=; ";
+        private static MySqlConnection currentConnection = null;
+        private static String sql_string = "";
+        private static String error_message = "";
+        private static List<string> arrayResult = new List<string>();
 
         public static String Sql_string
         {
@@ -40,7 +34,7 @@ namespace GeneralBank.Clases
             bool result;
             try
             {
-                currentConnection = new MySqlConnection("server=127.0.0.1; database=Nombre; Uid=root; pwd=;");
+                currentConnection = new MySqlConnection(CONNECTION_STRING);
                 currentConnection.Open();
                 result = true;
             }
@@ -61,22 +55,26 @@ namespace GeneralBank.Clases
             catch { }
         }
 
-        public static void ExecuteStatement() //INSERT, UPDATE, and DELETE statements
+        public static int ExecuteStatement() //INSERT, UPDATE, and DELETE statements
         {
+            long lastId;
             try
             {
                 MySqlCommand command = currentConnection.CreateCommand();
                 command.CommandText = sql_string;
                 command.ExecuteNonQuery();
+                lastId = command.LastInsertedId;
             }
             catch (MySqlException ex)
             {
                 error_message = ex.ToString();
+                lastId = 0;
             }
             finally
             {
                 Close();
             }
+            return Convert.ToInt32(lastId);
         }
 
         public static void ExecuteReader() //Retrieve data from tables 
