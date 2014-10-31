@@ -32,12 +32,12 @@
             this.btnValidar = new System.Windows.Forms.Button();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtCuenta = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblRazon = new System.Windows.Forms.Label();
             this.lblCuenta = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -57,7 +57,7 @@
             this.btnValidar.Location = new System.Drawing.Point(385, 35);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(75, 23);
-            this.btnValidar.TabIndex = 3;
+            this.btnValidar.TabIndex = 1;
             this.btnValidar.Text = "Validar";
             this.btnValidar.UseVisualStyleBackColor = true;
             // 
@@ -66,7 +66,7 @@
             this.txtCliente.Location = new System.Drawing.Point(128, 37);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(228, 20);
-            this.txtCliente.TabIndex = 5;
+            this.txtCliente.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -79,29 +79,38 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(107, 88);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(346, 89);
-            this.richTextBox2.TabIndex = 22;
-            this.richTextBox2.Text = "";
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(260, 211);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 20;
+            this.button3.TabIndex = 5;
             this.button3.Text = "Aceptar";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(107, 88);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(346, 89);
+            this.richTextBox2.TabIndex = 4;
+            this.richTextBox2.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(364, 211);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(128, 96);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 18;
+            this.textBox1.TabIndex = 2;
             // 
             // txtCuenta
             // 
@@ -115,18 +124,9 @@
             this.button2.Location = new System.Drawing.Point(385, 94);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 17;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Ver Balance";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(364, 211);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // lblRazon
             // 
