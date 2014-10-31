@@ -27,5 +27,28 @@ namespace GeneralBank
             HacerTransferencia form = new HacerTransferencia();
             form.Show();
         }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarCliente form = new AgregarCliente();
+            form.Show();
+        }
+
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AgregarCuenta form = new AgregarCuenta();
+            form.Show();
+        }
+
+        private void bloquearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BloquearCuenta form = new BloquearCuenta();
+            form.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
