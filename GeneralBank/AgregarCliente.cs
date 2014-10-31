@@ -42,11 +42,16 @@ namespace GeneralBank
             String query = "INSERT INTO Cliente(nombre,apellidoPaterno,apellidoMaterno, nss, rfc, fechaNacimiento)"+ 
                 "VALUES('"+nombre+"','"+apellidoPaterno+"','"+apellidoMaterno+"','"+nss+"','"+rfc+"','"+dia+"-"+mes+"-"+anho+"')";
             DatabaseConnection.Connect();
-            int idCliente =  DatabaseConnection.ExecuteStatement(query);
+            DatabaseConnection.Sql_string = query;
+            int idCliente =  DatabaseConnection.ExecuteStatement();
             query = "INSERT INTO Domicilio(idCliente,calle, numeroExterior, numeroInterior, codigoPostal, ciudad, estado )"+
                     "VALUES(" + idCliente + ",'" + calle + "','" + numExterior + "','" + numInterior + "','"+cp+"','"+ciudad+"','"+estado+"')";
+            DatabaseConnection.Sql_string = query;
+            DatabaseConnection.ExecuteStatement();
             query = "INSERT INTO Telefono(idCliente, lada, telefono, tipoTelefono)"+ 
                     "VALUES("+idCliente+",'"+ladaTelefono+"','"+telefono+"','"+tipoTel+"');";
+            DatabaseConnection.Sql_string = query;
+            DatabaseConnection.ExecuteStatement();
             DatabaseConnection.Close();
         }
 
