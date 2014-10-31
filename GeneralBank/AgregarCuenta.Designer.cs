@@ -32,9 +32,9 @@
             this.lblTipoCuenta = new System.Windows.Forms.Label();
             this.lblSucursal = new System.Windows.Forms.Label();
             this.lblEmpleado = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNumCuenta = new System.Windows.Forms.TextBox();
+            this.txtSucursal = new System.Windows.Forms.TextBox();
+            this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.dropTipoCuenta = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -77,26 +77,26 @@
             this.lblEmpleado.TabIndex = 3;
             this.lblEmpleado.Text = "Empleado:";
             // 
-            // textBox1
+            // txtNumCuenta
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtNumCuenta.Location = new System.Drawing.Point(104, 37);
+            this.txtNumCuenta.Name = "txtNumCuenta";
+            this.txtNumCuenta.Size = new System.Drawing.Size(145, 20);
+            this.txtNumCuenta.TabIndex = 0;
             // 
-            // textBox2
+            // txtSucursal
             // 
-            this.textBox2.Location = new System.Drawing.Point(334, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtSucursal.Location = new System.Drawing.Point(334, 37);
+            this.txtSucursal.Name = "txtSucursal";
+            this.txtSucursal.Size = new System.Drawing.Size(145, 20);
+            this.txtSucursal.TabIndex = 1;
             // 
-            // textBox3
+            // txtEmpleado
             // 
-            this.textBox3.Location = new System.Drawing.Point(334, 82);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtEmpleado.Location = new System.Drawing.Point(334, 82);
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.Size = new System.Drawing.Size(145, 20);
+            this.txtEmpleado.TabIndex = 3;
             // 
             // dropTipoCuenta
             // 
@@ -104,7 +104,7 @@
             this.dropTipoCuenta.Location = new System.Drawing.Point(104, 82);
             this.dropTipoCuenta.Name = "dropTipoCuenta";
             this.dropTipoCuenta.Size = new System.Drawing.Size(145, 21);
-            this.dropTipoCuenta.TabIndex = 7;
+            this.dropTipoCuenta.TabIndex = 2;
             // 
             // btnAceptar
             // 
@@ -114,6 +114,7 @@
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnLimpiar
             // 
@@ -123,6 +124,7 @@
             this.btnLimpiar.TabIndex = 9;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnCancelar
             // 
@@ -132,6 +134,7 @@
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // AgregarCuenta
             // 
@@ -142,9 +145,9 @@
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dropTipoCuenta);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmpleado);
+            this.Controls.Add(this.txtSucursal);
+            this.Controls.Add(this.txtNumCuenta);
             this.Controls.Add(this.lblEmpleado);
             this.Controls.Add(this.lblSucursal);
             this.Controls.Add(this.lblTipoCuenta);
@@ -162,9 +165,9 @@
         private System.Windows.Forms.Label lblTipoCuenta;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.Label lblEmpleado;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNumCuenta;
+        private System.Windows.Forms.TextBox txtSucursal;
+        private System.Windows.Forms.TextBox txtEmpleado;
         private System.Windows.Forms.ComboBox dropTipoCuenta;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnLimpiar;
