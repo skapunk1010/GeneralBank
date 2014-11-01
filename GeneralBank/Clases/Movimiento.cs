@@ -28,8 +28,8 @@ namespace GeneralBank.Clases
             set { idMovimiento = value; }
         }
 
-        private Enum tipo;
-        public Enum Tipo
+        private Movimiento.Tipos tipo;
+        public Movimiento.Tipos Tipo
         {
             get { return tipo; }
             set { tipo = value; }

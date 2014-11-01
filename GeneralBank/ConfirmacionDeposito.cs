@@ -12,33 +12,61 @@ namespace GeneralBank
 {
     public partial class ConfirmacionDeposito : Form
     {
-        private String numCuenta;
-        private float monto;
+        private Deposito deposito;
 
         public ConfirmacionDeposito (Deposito deposito)
         {
-            InitializeComponent();
-            this.numCuenta = deposito.NumCuenta;
-            this.monto = deposito.Monto;
+            if (deposito.Tipo == Movimiento.Tipos.DEPOSITO)
+            {
+                InitializeComponent();
+                String numCuenta = deposito.NumCuenta;
+                float monto = deposito.Monto;
+                this.deposito = deposito;
 
-            txtInformacion.Text = "Se realizará un depósito a la cuenta:" + Environment.NewLine + Environment.NewLine +
-                                  numCuenta + Environment.NewLine + Environment.NewLine +
-                                  "por la cantidad de:" + Environment.NewLine + Environment.NewLine +
-                                  monto.ToString() + " MNX";
+                txtInformacion.Text = "Se realizará un depósito a la cuenta:" + Environment.NewLine + Environment.NewLine +
+                                      numCuenta + Environment.NewLine + Environment.NewLine +
+                                      "por la cantidad de:" + Environment.NewLine + Environment.NewLine +
+                                      monto.ToString() + " MNX";
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void btAceptar_Click(object sender, EventArgs e)
         {
-            //txtSaldo.Text = cuenta.Saldo;
-            //txtInformacion.Text = movimiento.Id;
+            DateTime fecha = DateTime.Now;
+            deposito.Fecha = fecha.ToString("dd/MM/yyyy HH:mm s");
+            
+            String query;
+            //DatabaseConnection.Connect();
+            query = "INSERT INTO movimiento(claveTipoMovimiento, idCuentaDestino, fecha, monto )" +
+                    "VALUES(" + (short)deposito.Tipo + "," + deposito.NumCuenta + ",'" + deposito.Fecha + "'," + deposito.Monto + ")";
+            DatabaseConnection.Sql_string = query; txtInformacion.Text += query;
+            deposito.IdMovimiento = DatabaseConnection.ExecuteStatement();
+
+            if (deposito.IdMovimiento >= 0)
+            {
+                float saldo = 0;
+                txtIdTransaccion.Text = deposito.IdMovimiento.ToString();
+                query = "SELECT SUM(monto) FROM movimiento" +
+                    "WHERE idCuentaDestino=" + deposito.NumCuenta;
+                DatabaseConnection.Sql_string = query; txtInformacion.Text += query;
+                saldo = DatabaseConnection.ExecuteFloatReader();
+                txtSaldo.Text = "$ " + saldo.ToString();
+            }
+            else
+            {
+                MessageBox.Show("ERROR: No se pudo realizar la transacción");
+            }
+            DatabaseConnection.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        
 
     }
 }

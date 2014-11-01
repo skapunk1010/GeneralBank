@@ -57,6 +57,7 @@ namespace GeneralBank.Clases
 
         public static int ExecuteStatement() //INSERT, UPDATE, and DELETE statements
         {
+            Connect();
             long lastId;
             try
             {
@@ -66,6 +67,11 @@ namespace GeneralBank.Clases
                 lastId = command.LastInsertedId;
             }
             catch (MySqlException ex)
+            {
+                error_message = ex.ToString();
+                lastId = 0;
+            }
+            catch (InvalidOperationException ex)
             {
                 error_message = ex.ToString();
                 lastId = 0;
@@ -98,6 +104,10 @@ namespace GeneralBank.Clases
             {
                 error_message = ex.ToString();
             }
+            catch (InvalidOperationException ex)
+            {
+                error_message = ex.ToString();
+            }
             finally
             {
                 if (rdr != null)
@@ -106,6 +116,41 @@ namespace GeneralBank.Clases
                 }
                 Close();
             }
+        }
+
+        public static float ExecuteFloatReader() //Retrieve one float data 
+        {
+            Connect();
+            MySqlCommand command = null;
+            MySqlDataReader rdr = null;
+            float result = 0;
+
+            try
+            {
+                string stm = sql_string;
+                command = new MySqlCommand(stm, currentConnection);
+                rdr = command.ExecuteReader();
+
+                ArrayResult.Clear();
+                result = (float) rdr.GetDecimal(0);
+            }
+            catch (MySqlException ex)
+            {
+                error_message = ex.ToString();
+            }
+            catch (InvalidOperationException ex)
+            {
+                error_message = ex.ToString();
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+                Close();
+            }
+            return result;
         }
     }
 }

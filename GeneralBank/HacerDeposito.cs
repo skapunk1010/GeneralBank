@@ -43,6 +43,8 @@ namespace GeneralBank
 
                 Deposito dep = new Deposito(monto);
                 dep.NumCuenta = numCuenta;
+                dep.Tipo = Movimiento.Tipos.DEPOSITO;
+
                 ConfirmacionDeposito form = new ConfirmacionDeposito(dep);
                 form.Show();
                 this.Close();
