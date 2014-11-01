@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GeneralBank.Clases
 {
-    class Telefono
+    public class Telefono
     {
         public Telefono(String lada, String tel, String tipo) {
             this.lada = lada;

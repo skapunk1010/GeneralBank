@@ -19,6 +19,7 @@ namespace GeneralBank
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
+
             groupBox1.Visible = true;
         }
 
@@ -29,18 +30,27 @@ namespace GeneralBank
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            float monto = 0;
-            String numCuenta = "";
-            try
+            if (txtNumCuenta.Text != "")
             {
-                monto = (float) Convert.ToDecimal(txtCantDepositar.Text);
-                numCuenta = txtNumCuenta.Text;
+                float monto = 0;
+                String numCuenta = "";
+                try
+                {
+                    monto = (float)Convert.ToDecimal(txtCantDepositar.Text);
+                    numCuenta = txtNumCuenta.Text;
+                }
+                catch { }
+
+                Deposito dep = new Deposito(monto);
+                dep.NumCuenta = numCuenta;
+                ConfirmacionDeposito form = new ConfirmacionDeposito(dep);
+                form.Show();
+                this.Close();
             }
-            catch { }
-            //Deposito dep = new Deposito(0, 0, "", "", null, monto, numCuenta);
-            ConfirmacionDeposito form = new ConfirmacionDeposito(numCuenta, monto);
-            form.Show();
-            this.Close();
+            else
+            {
+                MessageBox.Show("Introduzca un número de cuenta");
+            }
         }
     }
 }

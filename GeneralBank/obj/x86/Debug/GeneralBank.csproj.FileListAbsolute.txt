@@ -22,3 +22,4 @@ C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank
 C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.csproj.GenerateResource.Cache
 C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\bin\Debug\GeneralBank.exe
 C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\bin\Debug\GeneralBank.pdb
+C:\Users\Francisco\Documents\Visual Studio 2010\Projects\GeneralBank\GeneralBank\GeneralBank\obj\x86\Debug\GeneralBank.csprojResolveAssemblyReference.cache

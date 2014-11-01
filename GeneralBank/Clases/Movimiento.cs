@@ -5,15 +5,20 @@ using System.Text;
 
 namespace GeneralBank.Clases
 {
-    class Movimiento
+    public class Movimiento
     {
-        public Movimiento(int id, Enum tipo, String d, String f, Empleado e, String c) {
+        public enum Tipos { DEPOSITO, TRANSFERENCIA }
+
+        //public Movimiento(int id, Enum tipo, String d, String f, Empleado e, String c)
+        public Movimiento() {
+            /*
             this.idMovimiento = id;
             this.tipo = tipo;
             this.descripcion = d;
             this.fecha = f;
             this.empleado = e;
             this.numCuenta = c;
+            */
         }
 
         private int idMovimiento;
@@ -57,5 +62,6 @@ namespace GeneralBank.Clases
             get { return numCuenta; }
             set { numCuenta = value; }
         }
+
     }
 }

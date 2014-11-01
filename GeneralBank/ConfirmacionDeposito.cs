@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GeneralBank.Clases;
 
 namespace GeneralBank
 {
@@ -14,11 +15,11 @@ namespace GeneralBank
         private String numCuenta;
         private float monto;
 
-        public ConfirmacionDeposito(String cuenta, float monto)
+        public ConfirmacionDeposito (Deposito deposito)
         {
             InitializeComponent();
-            this.numCuenta = cuenta;
-            this.monto = monto;
+            this.numCuenta = deposito.NumCuenta;
+            this.monto = deposito.Monto;
 
             txtInformacion.Text = "Se realizará un depósito a la cuenta:" + Environment.NewLine + Environment.NewLine +
                                   numCuenta + Environment.NewLine + Environment.NewLine +
@@ -28,9 +29,8 @@ namespace GeneralBank
 
         private void btAceptar_Click(object sender, EventArgs e)
         {
-            //cuenta.Saldo += monto;
             //txtSaldo.Text = cuenta.Saldo;
-            //txtInformacion = movimiento.Id;
+            //txtInformacion.Text = movimiento.Id;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

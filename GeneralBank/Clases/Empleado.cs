@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GeneralBank.Clases
 {
-    class Empleado : Persona
+    public class Empleado : Persona
     {
         public Empleado(String n,String ap, String am,String fechaNac, String p, float s,String  ingreso,bool status):base(n,ap,am,fechaNac) 
         {

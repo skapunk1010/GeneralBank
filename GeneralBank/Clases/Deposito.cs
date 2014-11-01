@@ -5,11 +5,12 @@ using System.Text;
 
 namespace GeneralBank.Clases
 {
-    class Deposito : Movimiento
+    public class Deposito : Movimiento
     {
-        public Deposito(int id, Enum tipo, String d, String f, Empleado e, float m, String c): base(id, tipo, d, f, e, c)
+        //public Deposito(int id, Enum tipo, String d, String f, Empleado e, float m, String c): base(id, tipo, d, f, e, c)
+        public Deposito(float monto)
         {
-           this.monto = m;
+            this.monto = monto;
         }
 
         private float monto;
