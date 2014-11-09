@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GeneralBank.Clases;
 
 namespace GeneralBank
 {
@@ -21,6 +22,21 @@ namespace GeneralBank
             comboPuesto.SelectedIndex = 0;
             radioMatutino.Checked = true;
             radioMasculino.Checked = true;
+
+            String query = "SELECT idSucursal FROM Sucursal";
+            DatabaseConnection.Sql_string = query;
+            DatabaseConnection.ExecuteReader();
+            if (DatabaseConnection.ArrayResult != null) {
+                List<String> resultado = DatabaseConnection.ArrayResult;
+                List<ComboBoxItem> items = new List<ComboBoxItem>();
+                foreach(String indice in resultado){
+                    items.Add(new ComboBoxItem(indice, Convert.ToInt32(indice)));
+                }
+                comboSucursal.DisplayMember = "Name";
+                comboSucursal.ValueMember = "Value";
+                comboSucursal.DataSource = items;
+                comboSucursal.SelectedIndex = 0;
+            }
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -63,15 +79,18 @@ namespace GeneralBank
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if()
+            if( String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrEmpty(txtApellidoPaterno.Text) || String.IsNullOrEmpty(txtCalle.Text) || 
+                String.IsNullOrEmpty(txtColonia.Text)|| String.IsNullOrEmpty(txtCiudad.Text) || String.IsNullOrEmpty(txtEstado.Text) ||
+                String.IsNullOrEmpty(txtLada.Text)   || String.IsNullOrEmpty(txtTelefono.Text))
             {
+                MessageBox.Show("Debe de llenar todos los campos requeridos!");
             }else{
                 String nombre = txtNombre.Text;
                 String apellidoPaterno = txtApellidoPaterno.Text;
                 String apellidoMaterno = txtApellidoMaterno.Text;
-                String diaNacimiento = diaNacimiento.Value.toString();
-                String mesNacimiento = mesNacimiento.Value.toString();
-                String anhoNacimiento = anhoNacimiento.Value.toString();
+                String diaNac = diaNacimiento.Value.ToString();
+                String mesNac = mesNacimiento.Value.ToString();
+                String anhoNac = anhoNacimiento.Value.ToString();
                 //Sexo
                 String nss = txtNss.Text;
                 String rfc = txtRfc.Text;
@@ -86,14 +105,124 @@ namespace GeneralBank
                 String ciudad = txtCiudad.Text;
                 String estado = txtEstado.Text;
 
-                String diaIngreso = diaIngreso.Value.toString();
-                String mesIngreso = mesIngreso.Value.toString();
-                String anhoIngreso = anhoIngreso.Value.toString();
+                int idSucursal = Convert.ToInt32(comboSucursal.SelectedValue.ToString());
+                String diaIngresoString = diaIngreso.Value.ToString();
+                String mesIngresoString = mesIngreso.Value.ToString();
+                String anhoIngresoString = anhoIngreso.Value.ToString();
                 float sueldo = (float)Convert.ToDouble(numericSueldo.Value.ToString());
-                String status = comboStatus.SelectedValue.ToString();
-                String puesto = comboPuesto.SelectedValue.ToString();
+                String status = comboStatus.SelectedItem.ToString();
+                String puesto = comboPuesto.SelectedItem.ToString();
+                String horario = "";
+                if (radioMatutino.Checked){
+                    horario = "M";
+                }else if(radioVespertino.Checked){
+                    horario = "V";
+                }
 
+                String query =  "INSERT INTO Empleado(idSucursal, nombre, apellidoPaterno,apellidoMaterno, fechaNacimiento, fechaIngreso,"+
+                                "nss, rfc, sueldo, curp, status, puesto, horario) VALUES("+idSucursal+", '"+nombre+"','"+apellidoPaterno+"','"+apellidoMaterno+"',"+
+                                "'" + anhoNac + "-" + mesNac + "-" + diaNac + "','" + anhoIngresoString + "-" + mesIngresoString + "-" + diaIngresoString + "', '" + nss + "','" + rfc + "'," +
+                                ""+sueldo+", '"+curp+"','"+status+"','"+puesto+"','"+horario+"')";
+                
+                DatabaseConnection.Sql_string = query;
+                int idEmpleado = DatabaseConnection.ExecuteStatement();
+                if (idEmpleado == 0) {
+                    MessageBox.Show("Hubo algún error al insertar el empleado");
+                    return;
+                }
+                query = "INSERT INTO Telefono(idEmpleado, lada, telefono) VALUES ("+idEmpleado+", '"+ladaTel+"','"+telefono+"')";
+                DatabaseConnection.Sql_string = query;
+                int idTelefono = DatabaseConnection.ExecuteStatement();
+                if (idTelefono == 0) {
+                    MessageBox.Show("Hubo algún error al insertar el telefono");
+                    return;
+                }
+                query = "INSERT INTO Domicilio(idEmpleado, calle, numeroExterior, numeroInterior, colonia, codigoPostal, ciudad, estado) VALUES(" +
+                        ""+idEmpleado+",'"+calle+"', "+numExterior+",'"+numInterior+"','"+colonia+"','"+cp+"','"+ciudad+"','"+estado+"')";
+                DatabaseConnection.Sql_string = query;
+                int idDomicilio = DatabaseConnection.ExecuteStatement();
+                if (idDomicilio == 0) {
+                    MessageBox.Show("Hubo algún error al insertar el domicilio del empleado.");
+                    return;
+                }
+                btnLimpiar_Click(sender, e);
+                MessageBox.Show("Empleado insertado correctamente!");
             }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space || e.KeyChar == '.');
+        }
+
+        private void txtApellidoPaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space || e.KeyChar == '.');
+        }
+
+        private void txtApellidoMaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space || e.KeyChar == '.');
+        }
+
+        private void txtNss_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtRfc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtCurp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtLada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtNumExterior_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtCp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtCalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space || e.KeyChar == '.');
+        }
+
+        private void txtColonia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtCiudad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtNumInterior_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '-');
         }
     }
 }

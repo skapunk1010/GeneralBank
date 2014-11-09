@@ -77,6 +77,12 @@
     <Compile Include="AgregarCuenta.Designer.cs">
       <DependentUpon>AgregarCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarEmpleado.Designer.cs">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,7 @@
     <Compile Include="BloquearCuenta.Designer.cs">
       <DependentUpon>BloquearCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\ComboBoxItem.cs" />
     <Compile Include="Clases\DatabaseConnection.cs" />
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Deposito.cs" />
@@ -142,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarCuenta.resx">
       <DependentUpon>AgregarCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarEmpleado.resx">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarSucursal.resx">
       <DependentUpon>AgregarSucursal.cs</DependentUpon>

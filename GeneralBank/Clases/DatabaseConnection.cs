@@ -8,7 +8,7 @@ namespace GeneralBank.Clases
 {
     class DatabaseConnection
     {
-        private const String CONNECTION_STRING = "server=localhost; database=generalbank; Uid=root; pwd=; ";
+        private const String CONNECTION_STRING = "server=localhost; database=generalbank; Uid=root; pwd=root; ";
         private static MySqlConnection currentConnection = null;
         private static String sql_string = "";
         private static String error_message = "";
@@ -87,7 +87,7 @@ namespace GeneralBank.Clases
         {
             MySqlCommand command = null;
             MySqlDataReader rdr = null;
-
+            Connect();
             try
             {
                 string stm = sql_string;
