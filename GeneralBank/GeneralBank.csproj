@@ -96,6 +96,7 @@
       <DependentUpon>BloquearCuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\ComboBoxItem.cs" />
+    <Compile Include="Clases\Cuenta.cs" />
     <Compile Include="Clases\DatabaseConnection.cs" />
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Deposito.cs" />
