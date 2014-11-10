@@ -89,6 +89,8 @@
             this.lblFechaIngreso = new System.Windows.Forms.Label();
             this.mesIngreso = new System.Windows.Forms.NumericUpDown();
             this.diaIngreso = new System.Windows.Forms.NumericUpDown();
+            this.comboSucursal = new System.Windows.Forms.ComboBox();
+            this.lblSucursal = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anhoNacimiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesNacimiento)).BeginInit();
@@ -125,7 +127,7 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(438, 430);
+            this.Cancelar.Location = new System.Drawing.Point(438, 460);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Cancelar.TabIndex = 32;
@@ -135,7 +137,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(340, 430);
+            this.btnLimpiar.Location = new System.Drawing.Point(340, 460);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 31;
@@ -145,7 +147,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(244, 430);
+            this.btnAceptar.Location = new System.Drawing.Point(244, 460);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 30;
@@ -169,6 +171,7 @@
             this.txtCp.Name = "txtCp";
             this.txtCp.Size = new System.Drawing.Size(171, 20);
             this.txtCp.TabIndex = 18;
+            this.txtCp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCp_KeyPress);
             // 
             // lblCp
             // 
@@ -186,6 +189,7 @@
             this.txtNumInterior.Name = "txtNumInterior";
             this.txtNumInterior.Size = new System.Drawing.Size(48, 20);
             this.txtNumInterior.TabIndex = 17;
+            this.txtNumInterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumInterior_KeyPress);
             // 
             // txtEstado
             // 
@@ -194,6 +198,7 @@
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(171, 20);
             this.txtEstado.TabIndex = 21;
+            this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstado_KeyPress);
             // 
             // txtCiudad
             // 
@@ -202,6 +207,7 @@
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(171, 20);
             this.txtCiudad.TabIndex = 20;
+            this.txtCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiudad_KeyPress);
             // 
             // txtColonia
             // 
@@ -210,6 +216,7 @@
             this.txtColonia.Name = "txtColonia";
             this.txtColonia.Size = new System.Drawing.Size(171, 20);
             this.txtColonia.TabIndex = 19;
+            this.txtColonia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtColonia_KeyPress);
             // 
             // txtNumExterior
             // 
@@ -218,6 +225,7 @@
             this.txtNumExterior.Name = "txtNumExterior";
             this.txtNumExterior.Size = new System.Drawing.Size(49, 20);
             this.txtNumExterior.TabIndex = 16;
+            this.txtNumExterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumExterior_KeyPress);
             // 
             // txtCalle
             // 
@@ -226,6 +234,7 @@
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(171, 20);
             this.txtCalle.TabIndex = 15;
+            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
             // 
             // lblNumeroInterior
             // 
@@ -300,6 +309,7 @@
             this.txtCurp.Name = "txtCurp";
             this.txtCurp.Size = new System.Drawing.Size(116, 20);
             this.txtCurp.TabIndex = 11;
+            this.txtCurp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCurp_KeyPress);
             // 
             // lblCurp
             // 
@@ -317,6 +327,7 @@
             this.txtNss.Name = "txtNss";
             this.txtNss.Size = new System.Drawing.Size(116, 20);
             this.txtNss.TabIndex = 9;
+            this.txtNss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNss_KeyPress);
             // 
             // lblNss
             // 
@@ -442,6 +453,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(81, 20);
             this.txtTelefono.TabIndex = 13;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtLada
             // 
@@ -450,6 +462,7 @@
             this.txtLada.Name = "txtLada";
             this.txtLada.Size = new System.Drawing.Size(27, 20);
             this.txtLada.TabIndex = 12;
+            this.txtLada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLada_KeyPress);
             // 
             // txtRfc
             // 
@@ -458,6 +471,7 @@
             this.txtRfc.Name = "txtRfc";
             this.txtRfc.Size = new System.Drawing.Size(116, 20);
             this.txtRfc.TabIndex = 10;
+            this.txtRfc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRfc_KeyPress);
             // 
             // txtApellidoMaterno
             // 
@@ -466,6 +480,7 @@
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.Size = new System.Drawing.Size(116, 20);
             this.txtApellidoMaterno.TabIndex = 3;
+            this.txtApellidoMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoMaterno_KeyPress);
             // 
             // txtApellidoPaterno
             // 
@@ -474,6 +489,7 @@
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.Size = new System.Drawing.Size(116, 20);
             this.txtApellidoPaterno.TabIndex = 2;
+            this.txtApellidoPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoPaterno_KeyPress);
             // 
             // txtNombre
             // 
@@ -482,6 +498,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(116, 20);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1
             // 
@@ -497,9 +514,9 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(25, 314);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(52, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
             this.lblTelefono.TabIndex = 108;
-            this.lblTelefono.Text = "Teléfono:";
+            this.lblTelefono.Text = "Teléfono:*";
             // 
             // lblRfc
             // 
@@ -557,6 +574,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblSucursal);
+            this.groupBox3.Controls.Add(this.comboSucursal);
             this.groupBox3.Controls.Add(this.lblTurno);
             this.groupBox3.Controls.Add(this.radioGroupTurno);
             this.groupBox3.Controls.Add(this.comboPuesto);
@@ -571,7 +590,7 @@
             this.groupBox3.Controls.Add(this.diaIngreso);
             this.groupBox3.Location = new System.Drawing.Point(254, 232);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(276, 182);
+            this.groupBox3.Size = new System.Drawing.Size(276, 210);
             this.groupBox3.TabIndex = 117;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos Laborales";
@@ -579,7 +598,7 @@
             // lblTurno
             // 
             this.lblTurno.AutoSize = true;
-            this.lblTurno.Location = new System.Drawing.Point(57, 131);
+            this.lblTurno.Location = new System.Drawing.Point(57, 163);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(38, 13);
             this.lblTurno.TabIndex = 129;
@@ -589,7 +608,7 @@
             // 
             this.radioGroupTurno.Controls.Add(this.radioVespertino);
             this.radioGroupTurno.Controls.Add(this.radioMatutino);
-            this.radioGroupTurno.Location = new System.Drawing.Point(107, 128);
+            this.radioGroupTurno.Location = new System.Drawing.Point(107, 160);
             this.radioGroupTurno.Name = "radioGroupTurno";
             this.radioGroupTurno.Size = new System.Drawing.Size(120, 48);
             this.radioGroupTurno.TabIndex = 28;
@@ -624,7 +643,7 @@
             "CAJERO",
             "EJECUTIVO",
             "GERENTE"});
-            this.comboPuesto.Location = new System.Drawing.Point(107, 101);
+            this.comboPuesto.Location = new System.Drawing.Point(107, 133);
             this.comboPuesto.Name = "comboPuesto";
             this.comboPuesto.Size = new System.Drawing.Size(121, 21);
             this.comboPuesto.TabIndex = 27;
@@ -632,7 +651,7 @@
             // lblPuesto
             // 
             this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Location = new System.Drawing.Point(55, 104);
+            this.lblPuesto.Location = new System.Drawing.Point(55, 136);
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(43, 13);
             this.lblPuesto.TabIndex = 126;
@@ -644,7 +663,7 @@
             this.comboStatus.Items.AddRange(new object[] {
             "ACTIVO",
             "INACTIVO"});
-            this.comboStatus.Location = new System.Drawing.Point(107, 74);
+            this.comboStatus.Location = new System.Drawing.Point(107, 106);
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(121, 21);
             this.comboStatus.TabIndex = 26;
@@ -652,7 +671,7 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(55, 77);
+            this.lblStatus.Location = new System.Drawing.Point(55, 109);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(40, 13);
             this.lblStatus.TabIndex = 124;
@@ -660,7 +679,12 @@
             // 
             // numericSueldo
             // 
-            this.numericSueldo.Location = new System.Drawing.Point(107, 49);
+            this.numericSueldo.Location = new System.Drawing.Point(107, 81);
+            this.numericSueldo.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
             this.numericSueldo.Name = "numericSueldo";
             this.numericSueldo.Size = new System.Drawing.Size(120, 20);
             this.numericSueldo.TabIndex = 25;
@@ -668,7 +692,7 @@
             // lblSueldo
             // 
             this.lblSueldo.AutoSize = true;
-            this.lblSueldo.Location = new System.Drawing.Point(49, 51);
+            this.lblSueldo.Location = new System.Drawing.Point(49, 83);
             this.lblSueldo.Name = "lblSueldo";
             this.lblSueldo.Size = new System.Drawing.Size(46, 13);
             this.lblSueldo.TabIndex = 122;
@@ -676,7 +700,7 @@
             // 
             // anhoIngreso
             // 
-            this.anhoIngreso.Location = new System.Drawing.Point(178, 18);
+            this.anhoIngreso.Location = new System.Drawing.Point(178, 50);
             this.anhoIngreso.Maximum = new decimal(new int[] {
             2050,
             0,
@@ -699,7 +723,7 @@
             // lblFechaIngreso
             // 
             this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Location = new System.Drawing.Point(17, 23);
+            this.lblFechaIngreso.Location = new System.Drawing.Point(17, 55);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
             this.lblFechaIngreso.Size = new System.Drawing.Size(78, 13);
             this.lblFechaIngreso.TabIndex = 119;
@@ -707,7 +731,7 @@
             // 
             // mesIngreso
             // 
-            this.mesIngreso.Location = new System.Drawing.Point(143, 18);
+            this.mesIngreso.Location = new System.Drawing.Point(143, 50);
             this.mesIngreso.Maximum = new decimal(new int[] {
             12,
             0,
@@ -729,7 +753,7 @@
             // 
             // diaIngreso
             // 
-            this.diaIngreso.Location = new System.Drawing.Point(107, 18);
+            this.diaIngreso.Location = new System.Drawing.Point(107, 50);
             this.diaIngreso.Maximum = new decimal(new int[] {
             31,
             0,
@@ -749,11 +773,28 @@
             0,
             0});
             // 
+            // comboSucursal
+            // 
+            this.comboSucursal.FormattingEnabled = true;
+            this.comboSucursal.Location = new System.Drawing.Point(107, 20);
+            this.comboSucursal.Name = "comboSucursal";
+            this.comboSucursal.Size = new System.Drawing.Size(121, 21);
+            this.comboSucursal.TabIndex = 130;
+            // 
+            // lblSucursal
+            // 
+            this.lblSucursal.AutoSize = true;
+            this.lblSucursal.Location = new System.Drawing.Point(44, 28);
+            this.lblSucursal.Name = "lblSucursal";
+            this.lblSucursal.Size = new System.Drawing.Size(51, 13);
+            this.lblSucursal.TabIndex = 131;
+            this.lblSucursal.Text = "Sucursal:";
+            // 
             // AgregarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 472);
+            this.ClientSize = new System.Drawing.Size(546, 506);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.txtNss);
             this.Controls.Add(this.lblNss);
@@ -881,5 +922,7 @@
         private System.Windows.Forms.Label lblTurno;
         private System.Windows.Forms.TextBox txtCurp;
         private System.Windows.Forms.Label lblCurp;
+        private System.Windows.Forms.Label lblSucursal;
+        private System.Windows.Forms.ComboBox comboSucursal;
     }
 }

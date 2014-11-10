@@ -24,7 +24,7 @@ namespace GeneralBank
                 String.IsNullOrEmpty(txtCalle.Text)  || String.IsNullOrEmpty(txtCiudad.Text) || String.IsNullOrEmpty(txtColonia.Text) ||
                 String.IsNullOrEmpty(txtEstado.Text) || String.IsNullOrEmpty(txtNumExterior.Text))
             {
-                MessageBox.Show("Es necesario llenar los campos necesarios");
+                MessageBox.Show("Es necesario llenar los campos requeridos");
             }
             else {
                 String nombre           = txtNombre.Text;
