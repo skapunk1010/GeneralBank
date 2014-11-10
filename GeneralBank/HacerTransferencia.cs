@@ -15,11 +15,34 @@ namespace GeneralBank
         public HacerTransferencia()
         {
             InitializeComponent();
+            txtCuentaOrigen.Focus();
+            AcceptButton = btnValidar;
         }
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
-            groupBox1.Visible = true;
+            DatabaseConnection.Connect();
+            String query = "SELECT COUNT(idcuenta) FROM cuenta WHERE idcuenta = " + txtCuentaOrigen.Text + " OR idcuenta = " + txtCuentaDestino.Text;
+            DatabaseConnection.Sql_string = query;
+            short entry = (short)DatabaseConnection.ExecuteFloatReader();
+            if (entry > 1)
+            {
+                groupBox1.Visible = true;
+                txtCuentaOrigen.Enabled = false;
+                txtCuentaDestino.Enabled = false;
+                this.AcceptButton = btnAceptar;
+                txtCantTransferir.Focus();
+            }
+            else
+            {
+                //txtCuentaOrigen.Text = query; txtCuentaDestino.Text = "(" + entry + ")";
+                MessageBox.Show("Cuenta inválida ");
+                groupBox1.Visible = false;
+                txtCuentaOrigen.Enabled = true;
+                txtCuentaDestino.Enabled = true;
+                this.AcceptButton = btnValidar;
+                txtCuentaOrigen.Focus();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -29,21 +52,32 @@ namespace GeneralBank
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            float monto = 0;
-            String numCuenta = "";
-            String destino = "";
-            try
+            if (txtCuentaOrigen.Text != "" && txtCuentaDestino.Text != "")
             {
-                monto = (float)Convert.ToDecimal(txtCantTransferir.Text);
-                numCuenta = txtCuentaOrigen.Text;
-                destino = txtCuentaDestino.Text;
+                float monto = 0;
+                String numCuenta = "";
+                String destino = "";
+                try
+                {
+                    monto = (float)Convert.ToDecimal(txtCantTransferir.Text);
+                    numCuenta = txtCuentaOrigen.Text;
+                    destino = txtCuentaDestino.Text;
+                }
+                catch { MessageBox.Show("Introduzca un monto válido"); }
+
+                Transferencia tran = new Transferencia(monto, destino);
+                tran.NumCuenta = numCuenta;
+                tran.Tipo = Movimiento.Tipos.TRANSFERENCIA;
+
+                ConfirmacionTransferencia form = new ConfirmacionTransferencia(tran);
+                form.Show();
+                this.Close();
             }
-            catch { }
-            //Transferencia transf = new Transferencia(0, 0, "", "", null, monto, destino, numCuenta);
-            ConfirmacionTransferencia form = new ConfirmacionTransferencia(numCuenta, destino, monto);
-            form.Show();
-            this.Close();
+            else
+            {
+                MessageBox.Show("Introduzca un número de cuenta de origen y uno de destino");
+            }
+
         }
     }
 }

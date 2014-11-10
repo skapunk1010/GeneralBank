@@ -20,6 +20,7 @@ namespace GeneralBank
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
+            DatabaseConnection.Connect();
             String query = "SELECT COUNT(idcuenta) FROM cuenta WHERE idcuenta = " + txtNumCuenta.Text;
             DatabaseConnection.Sql_string = query;
             short entry = (short)DatabaseConnection.ExecuteFloatReader();
@@ -57,7 +58,7 @@ namespace GeneralBank
                     monto = (float)Convert.ToDecimal(txtCantDepositar.Text);
                     numCuenta = txtNumCuenta.Text;
                 }
-                catch { }
+                catch { MessageBox.Show("Introduzca un monto válido"); }
 
                 Deposito dep = new Deposito(monto);
                 dep.NumCuenta = numCuenta;

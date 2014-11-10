@@ -30,8 +30,8 @@
         {
             this.txtInformacion = new System.Windows.Forms.RichTextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnContinuar = new System.Windows.Forms.Button();
+            this.txtIdTransaccion = new System.Windows.Forms.TextBox();
             this.lblIdTransaccion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -54,22 +54,23 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // btnCancelar
+            // btnContinuar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(340, 291);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnContinuar.Location = new System.Drawing.Point(340, 291);
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Size = new System.Drawing.Size(75, 23);
+            this.btnContinuar.TabIndex = 2;
+            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.UseVisualStyleBackColor = true;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
-            // textBox1
+            // txtIdTransaccion
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(277, 250);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtIdTransaccion.Enabled = false;
+            this.txtIdTransaccion.Location = new System.Drawing.Point(277, 250);
+            this.txtIdTransaccion.Name = "txtIdTransaccion";
+            this.txtIdTransaccion.Size = new System.Drawing.Size(138, 20);
+            this.txtIdTransaccion.TabIndex = 3;
             // 
             // lblIdTransaccion
             // 
@@ -86,8 +87,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 336);
             this.Controls.Add(this.lblIdTransaccion);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.txtIdTransaccion);
+            this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtInformacion);
             this.MaximumSize = new System.Drawing.Size(470, 375);
@@ -104,8 +105,8 @@
 
         private System.Windows.Forms.RichTextBox txtInformacion;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnContinuar;
+        private System.Windows.Forms.TextBox txtIdTransaccion;
         private System.Windows.Forms.Label lblIdTransaccion;
     }
 }

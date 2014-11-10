@@ -120,7 +120,6 @@ namespace GeneralBank.Clases
 
         public static float ExecuteFloatReader() //Retrieve one float data 
         {
-            Connect();
             MySqlCommand command = null;
             MySqlDataReader rdr = null;
             float result = 0;

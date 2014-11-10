@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GeneralBank.Clases
 {
-    class Transferencia : Movimiento
+    public class Transferencia : Movimiento
     {
         public Transferencia(float monto, String destino)
         {

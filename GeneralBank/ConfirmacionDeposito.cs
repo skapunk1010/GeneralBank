@@ -43,7 +43,7 @@ namespace GeneralBank
             deposito.Fecha = fecha.ToString("yyyy-MM-dd HH:mm:s");
             
             String query;
-            //DatabaseConnection.Connect();
+            DatabaseConnection.Connect();
             query = "INSERT INTO movimiento(claveTipoMovimiento, idCuentaOrigen, idCuentaDestino, fecha, monto )" +
                     "VALUES(" + (short)deposito.Tipo + "," + deposito.NumCuenta + "," + deposito.NumCuenta + ",'" + deposito.Fecha + "'," + deposito.Monto + ")";
             DatabaseConnection.Sql_string = query; //txtInformacion.Text += query;
@@ -53,6 +53,7 @@ namespace GeneralBank
             {
                 float saldo = 0;
                 txtIdTransaccion.Text = deposito.IdMovimiento.ToString();
+                DatabaseConnection.Connect();
                 query = "SELECT SUM(monto) FROM movimiento " +
                     "WHERE idCuentaDestino=" + deposito.NumCuenta;
                 DatabaseConnection.Sql_string = query; //txtInformacion.Text += query;
