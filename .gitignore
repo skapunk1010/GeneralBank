@@ -1,3 +1,7 @@
 GeneralBank/bin/*
 GeneralBank/obj/*
 
+*.exe
+GeneralBank/bin/Debug/GeneralBank.exe
+GeneralBank/bin/Debug/GeneralBank.pdb
+GeneralBank/obj/x86/Debug/GeneralBank.exe

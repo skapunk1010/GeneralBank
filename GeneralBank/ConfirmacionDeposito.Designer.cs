@@ -32,7 +32,7 @@
             this.btAceptar = new System.Windows.Forms.Button();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.txtIdTransaccion = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnContinuar = new System.Windows.Forms.Button();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblIdTransaccion = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -71,15 +71,15 @@
             this.txtIdTransaccion.Size = new System.Drawing.Size(133, 20);
             this.txtIdTransaccion.TabIndex = 3;
             // 
-            // btnCancelar
+            // btnContinuar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(335, 335);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnContinuar.Location = new System.Drawing.Point(335, 335);
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Size = new System.Drawing.Size(75, 23);
+            this.btnContinuar.TabIndex = 4;
+            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.UseVisualStyleBackColor = true;
+            this.btnContinuar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblSaldo
             // 
@@ -106,7 +106,7 @@
             this.ClientSize = new System.Drawing.Size(455, 380);
             this.Controls.Add(this.lblIdTransaccion);
             this.Controls.Add(this.lblSaldo);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.txtIdTransaccion);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.btAceptar);
@@ -124,7 +124,7 @@
         private System.Windows.Forms.Button btAceptar;
         private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.TextBox txtIdTransaccion;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnContinuar;
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Label lblIdTransaccion;
     }

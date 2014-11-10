@@ -130,8 +130,7 @@ namespace GeneralBank.Clases
                 string stm = sql_string;
                 command = new MySqlCommand(stm, currentConnection);
                 rdr = command.ExecuteReader();
-
-                ArrayResult.Clear();
+                rdr.Read();
                 result = (float) rdr.GetDecimal(0);
             }
             catch (MySqlException ex)

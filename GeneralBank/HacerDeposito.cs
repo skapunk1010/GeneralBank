@@ -15,12 +15,30 @@ namespace GeneralBank
         public HacerDeposito()
         {
             InitializeComponent();
+            txtNumCuenta.Focus();
         }
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
-
-            groupBox1.Visible = true;
+            String query = "SELECT COUNT(idcuenta) FROM cuenta WHERE idcuenta = " + txtNumCuenta.Text;
+            DatabaseConnection.Sql_string = query;
+            short entry = (short)DatabaseConnection.ExecuteFloatReader();
+            if(entry > 0)
+            {
+                groupBox1.Visible = true;
+                txtNumCuenta.Enabled = false;
+                this.AcceptButton = btnAceptar;
+                txtCantDepositar.Focus();
+            }
+            else
+            {
+                //txtNumCuenta.Text = query;
+                MessageBox.Show("Cuenta inválida ");
+                groupBox1.Visible = false;
+                txtNumCuenta.Enabled = true;
+                this.AcceptButton = btnValidar;
+                txtNumCuenta.Focus();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
